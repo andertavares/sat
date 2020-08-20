@@ -6,6 +6,10 @@ report_interval: 10
 eval_interval: 50
 save_interval: 50
 
+mlp_arch:
+  hidden_sizes: [32]
+  activation: ReLU
+
 data_path: data/kcolor
 train_sets:
   - name: 3-5-0.5
@@ -21,9 +25,13 @@ eval_set:
   max_flips: 200
 
 model_path: False
+data_shuffle: False
+eval_multi: True
 
 gnn_hidden_size: 32
 readout_hidden_size: 64
+gnn_iter: 2
+gnn_async: False
 
 cycles: 1
 optimizer: RMSprop
